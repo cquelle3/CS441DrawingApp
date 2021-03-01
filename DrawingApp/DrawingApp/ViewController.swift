@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var undoButton: UIButton!
+    @IBOutlet var redButton: UIButton!
+    @IBOutlet var blackButton: UIButton!
+    
     var draw = Draw();
     
     override func viewDidLoad() {
@@ -17,10 +21,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         view.addSubview(draw);
+        view.bringSubviewToFront(undoButton);
+        view.bringSubviewToFront(redButton);
+        view.bringSubviewToFront(blackButton);
+        
         draw.frame = view.frame;
-        draw.backgroundColor = UIColor.blue;
+        draw.backgroundColor = UIColor.white;
     }
-
-
+    
+    @IBAction func undoPress(_sender: UIButton){
+        draw.undo();
+    }
+    
+    @IBAction func redPress(_sender: UIButton){
+        draw.setLineColor(color: UIColor.red);
+    }
+    
+    @IBAction func blackPress(_sender: UIButton){
+        draw.setLineColor(color: UIColor.black);
+    }
 }
-
