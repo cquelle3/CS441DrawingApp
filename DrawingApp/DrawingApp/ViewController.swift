@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var draw = Draw();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        view.addSubview(draw);
+        draw.frame = view.frame;
+        draw.backgroundColor = UIColor.blue;
     }
 
 
