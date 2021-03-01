@@ -17,8 +17,10 @@ class Draw: UIView {
      */
     override func draw(_ rect: CGRect) {
         // Drawing code
+        
         NSLog("Did a redraw of the draw");
         
+        let context = UIGraphicsGetCurrentContext();
             
     }
 }
