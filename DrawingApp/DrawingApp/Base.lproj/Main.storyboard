@@ -24,19 +24,59 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-u0-bo7">
-                                <rect key="frame" x="54" y="832" width="38" height="30"/>
+                                <rect key="frame" x="20" y="832" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Black"/>
+                                <state key="normal" title="Black">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="blackPressWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AO4-bn-cML"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLi-qn-ajS">
-                                <rect key="frame" x="334" y="832" width="30" height="30"/>
+                                <rect key="frame" x="24" y="794" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Red"/>
+                                <state key="normal" title="Red">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="redPressWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mwb-GK-JxX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aR-98-es0">
+                                <rect key="frame" x="24" y="745" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Blue">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bluePressWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8nF-W4-P1R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvA-kW-pnw">
+                                <rect key="frame" x="18" y="694" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Green">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="greenPressWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QFX-of-7sP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4m-kZ-V0s">
+                                <rect key="frame" x="335" y="794" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Increase"/>
+                                <connections>
+                                    <action selector="increaseLineSizeWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ua-SL-oPT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-cv-f6V">
+                                <rect key="frame" x="332" y="832" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Decrease"/>
+                                <connections>
+                                    <action selector="decreaseLineSizeWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRE-i6-o1N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,6 +85,10 @@
                     </view>
                     <connections>
                         <outlet property="blackButton" destination="3Mb-u0-bo7" id="TRr-yw-mE2"/>
+                        <outlet property="blueButton" destination="4aR-98-es0" id="dZV-sr-ZTZ"/>
+                        <outlet property="greenButton" destination="fvA-kW-pnw" id="HQa-mo-ksk"/>
+                        <outlet property="lineDown" destination="9aq-cv-f6V" id="q3q-wm-Q3A"/>
+                        <outlet property="lineUp" destination="o4m-kZ-V0s" id="CT3-di-IOb"/>
                         <outlet property="redButton" destination="rLi-qn-ajS" id="laP-Nc-zbZ"/>
                         <outlet property="undoButton" destination="XsD-56-A4u" id="wHP-S9-Hoc"/>
                     </connections>

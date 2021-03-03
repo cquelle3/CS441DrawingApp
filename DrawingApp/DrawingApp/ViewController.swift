@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet var undoButton: UIButton!
     @IBOutlet var redButton: UIButton!
     @IBOutlet var blackButton: UIButton!
+    @IBOutlet var blueButton: UIButton!
+    @IBOutlet var greenButton: UIButton!
+    @IBOutlet var lineUp: UIButton!
+    @IBOutlet var lineDown: UIButton!
     
     var draw = Draw();
     
@@ -24,6 +28,10 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(undoButton);
         view.bringSubviewToFront(redButton);
         view.bringSubviewToFront(blackButton);
+        view.bringSubviewToFront(blueButton);
+        view.bringSubviewToFront(greenButton);
+        view.bringSubviewToFront(lineUp);
+        view.bringSubviewToFront(lineDown);
         
         draw.frame = view.frame;
         draw.backgroundColor = UIColor.white;
@@ -39,5 +47,21 @@ class ViewController: UIViewController {
     
     @IBAction func blackPress(_sender: UIButton){
         draw.setLineColor(color: UIColor.black);
+    }
+    
+    @IBAction func bluePress(_sender: UIButton){
+        draw.setLineColor(color: UIColor.blue);
+    }
+    
+    @IBAction func greenPress(_sender: UIButton){
+        draw.setLineColor(color: UIColor.green);
+    }
+    
+    @IBAction func increaseLineSize(_sender: UIButton){
+        draw.increaseLineSize();
+    }
+    
+    @IBAction func decreaseLineSize(_sender: UIButton){
+        draw.decreaseLineSize();
     }
 }

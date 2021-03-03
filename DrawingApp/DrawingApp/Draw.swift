@@ -11,6 +11,7 @@ import UIKit
 class Draw: UIView {
     
     var lineColor = UIColor.black;
+    var lineSize = CGFloat(1);
     
     //stores each point in a line drawn by the user
     var line = [CGPoint]();
@@ -19,6 +20,7 @@ class Draw: UIView {
     var lines = [[CGPoint]]();
     
     var lineColors = [CGColor]();
+    var lineWidths = [CGFloat]();
     
     override func draw(_ rect: CGRect) {
         // Drawing code
@@ -26,7 +28,7 @@ class Draw: UIView {
         //gets current graphics on screen
         let context = UIGraphicsGetCurrentContext();
         
-        //loops through all past lines drawn and renders their points
+        //loops through all past lines drawn and renders their points and colors
         for (i, currLine) in lines.enumerated(){
             for(j, point) in currLine.enumerated(){
                 if(j == 0){
@@ -36,6 +38,7 @@ class Draw: UIView {
                     context?.addLine(to: point);
                 }
             }
+            context?.setLineWidth(lineWidths[i]);
             context?.setStrokeColor(lineColors[i]);
             context?.strokePath();
         }
@@ -50,7 +53,11 @@ class Draw: UIView {
             }
         }
         
+        //sets line color
         context?.setStrokeColor(lineColor.cgColor);
+        
+        //sets line size
+        context?.setLineWidth(lineSize);
         
         //displays line on screen
         context?.strokePath();
@@ -59,6 +66,7 @@ class Draw: UIView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         //gets current point that users finger is on on the screen
+        //pass nil to get touch location in windows coordinates
         guard let point = touches.first?.location(in: nil) else {return};
         print(point);
         
@@ -73,6 +81,7 @@ class Draw: UIView {
         //adds line to array of drawn lines to render later
         lines.append(line);
         lineColors.append(lineColor.cgColor);
+        lineWidths.append(lineSize);
         
         //removes all points from current line variable to free up variable for a future line
         line.removeAll();
@@ -80,6 +89,7 @@ class Draw: UIView {
     
     func undo(){
         if(lines.count > 0){
+            lineWidths.removeLast();
             lineColors.removeLast();
             lines.removeLast();
             setNeedsDisplay();
@@ -88,5 +98,17 @@ class Draw: UIView {
     
     func setLineColor(color: UIColor){
         lineColor = color;
+    }
+    
+    func decreaseLineSize(){
+        if(lineSize > 1){
+            lineSize = lineSize - 1;
+        }
+    }
+    
+    func increaseLineSize(){
+        if(lineSize < 10){
+            lineSize = lineSize + 1;
+        }
     }
 }
