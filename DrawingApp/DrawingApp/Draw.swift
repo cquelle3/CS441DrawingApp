@@ -52,13 +52,10 @@ class Draw: UIView {
                 context?.addLine(to: point);
             }
         }
-        
         //sets line color
         context?.setStrokeColor(lineColor.cgColor);
-        
         //sets line size
         context?.setLineWidth(lineSize);
-        
         //displays line on screen
         context?.strokePath();
     }
